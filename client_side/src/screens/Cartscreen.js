@@ -1,6 +1,7 @@
 import React from 'react'
 import { addToCart, deleteFromCart } from '../actions/cartAction'
 import { useSelector, useDispatch } from 'react-redux'
+import Checkout from '../components/Checkout'
 export default function Cartscreen() {
     const dispatch=useDispatch()
     const cartstate = useSelector(state => state.cartReducer)
@@ -41,7 +42,7 @@ export default function Cartscreen() {
                 </div>
                 <div className='col-md-4 text-end'>
                     <h2>SubTotal: {subtotal}/-</h2>
-                    <button className='btn'>CHECK OUT</button>
+                    <Checkout subtotal={subtotal}/>
                 </div>
             </div>
         </div>
