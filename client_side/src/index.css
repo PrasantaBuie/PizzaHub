@@ -45,6 +45,8 @@ select{
   #price{
     font-size: 17px !important;
   }
+  
+  
 }
 .fa-plus{
   color: green;
@@ -59,4 +61,12 @@ select{
 input{
   margin-top: 10px !important;
   
+}
+.myorder p{
+  /* color: brown; */
+  font-size: 0.8rem;
+}
+.myorder h2{
+  color: rgb(54, 0, 0);
+  font-size: 1.2rem;
 }

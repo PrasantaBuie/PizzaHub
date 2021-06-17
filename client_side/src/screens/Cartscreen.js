@@ -40,7 +40,7 @@ export default function Cartscreen() {
                         
                     })}
                 </div>
-                <div className='col-md-4 text-end'>
+                <div className='col-md-3 text-end'>
                     <h2>SubTotal: {subtotal}/-</h2>
                     <Checkout subtotal={subtotal}/>
                 </div>

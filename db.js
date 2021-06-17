@@ -1,6 +1,6 @@
 const mongoose=require('mongoose')
 //exact url is not given for security purpose
-var mongoUrl="mongodb+srv://username:password@cluster0.ov7xv.mongodb.net/mern-pizza"
+var mongoUrl="mongodb+srv://username:password@cluster0.ov7xv.mongodb.net/test"
 mongoose.connect(mongoUrl,{useUnifiedTopology:true,useNewUrlParser:true})
 var db=mongoose.connection //connection....
 db.on('connected',()=>{

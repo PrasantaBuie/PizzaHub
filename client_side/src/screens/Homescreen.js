@@ -4,6 +4,7 @@ import { getAllPizzas } from '../actions/pizzaActions'
 import Loading from '../components/Loading'
 import Error from '../components/Error'
 import Pizza from '../components/Pizza'
+import Filter from '../components/Filter'
 
 export default function Homescreen() {
     const pizzastate = useSelector(state => state.getAllPizzasReducer) //get the state 
@@ -15,7 +16,9 @@ export default function Homescreen() {
     return (
         //if loading then show loading,if error then show the error elese show all the pizzas to the home screen
         <div>
-            <div className="row">
+            <Filter/>
+            <div className="row justify-content-center">
+                
                 {loading ? (<Loading/>) : error ? (<Error error='Something went wrong'/>) : pizzas.map(pizza => {
                     return <div className="col-md-4" key={pizza._id}>
                         <div>
