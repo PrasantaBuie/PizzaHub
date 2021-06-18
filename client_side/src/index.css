@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 
-body {
+body ,html{
+  margin: 0;
+  
+  padding: 0;
   
   overflow-x: hidden;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -27,6 +30,7 @@ h1{
 }
 .flex-containner{
   display: flex !important;
+  
 }
 .btn{
   background-color: red !important;
@@ -46,7 +50,9 @@ select{
     font-size: 17px !important;
   }
   
-  
+  .modal_img{
+    height: 20rem;
+  }
 }
 .fa-plus{
   color: green;
@@ -70,3 +76,27 @@ input{
   color: rgb(54, 0, 0);
   font-size: 1.2rem;
 }
+.adminfunction{
+  padding: 10px;
+  background-color: rgb(0, 0, 87);
+}
+.adminfunction li{
+  list-style-type: none !important;
+  display: inline !important;
+}
+.adminfunction li a{
+  color: white ;
+  text-decoration: none;
+  padding: 10px !important;
+}
+td, th, tr{
+  text-align: center;
+  font-size: 0.8rem;
+}
+.manu_active{
+  font-weight: bold;
+  border-bottom: 3px solid #0ecc37;
+
+ 
+}
+

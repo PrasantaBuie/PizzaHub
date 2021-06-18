@@ -30,7 +30,7 @@ export default function Orderscreen() {
                                     </div>
                                 })}
                             </div>
-                            <div className='text-left w-100 m-1 mr-2'>
+                            <div className='text-left  m-1 mr-2'>
                             <h2 >Address</h2>
                             <hr/>
                             <p>Street: {order.shippingAddress.street}</p>
@@ -45,6 +45,7 @@ export default function Orderscreen() {
                                 <p>Date : {order.createdAt.substring(0,10)}</p>
                                 <p>Transaction Id : {order.transactionId}</p>
                                 <p>Order Id : {order._id}</p>
+                                <p>Status:{order.isDelivered ? (<h1>Delivered</h1>):(<h1>On The Way</h1>)}</p>
                             </div>
                         </div>
                     </div>

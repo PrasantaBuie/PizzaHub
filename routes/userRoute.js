@@ -41,4 +41,22 @@ router.post("/login",async (req,res)=>{
         return res.status(400).json({message:'Something went wrong'})
     }
 })
+router.get("/getallusers", async(req, res) => {
+    try {users = await User.find({});
+      res.send(users);
+    } catch (error) {
+      return res.status(400).json({ massage: error });
+      //console.log(error);
+    }
+  });
+  router.post('/deleteuser',async(req,res)=>{
+    const userid=req.body.userid
+    try{
+      await User.findOneAndDelete({_id:userid})
+      res.send('user deleted successfully')
+    }catch(error){
+      return res.status(400).json({ massage: error })
+    }
+    
+  })
 module.exports = router

@@ -2,7 +2,7 @@ import React from 'react'
 export default function () {
     return (
         <div className='text-center'>
-            <div className="spinner-border text-danger" role="status" style={{height:'80px',width:'80px',marginTop:'100px'}}>
+            <div className="spinner-border " role="status" style={{height:'70px',width:'70px'}}>
                 <span className="sr-only">Loading...</span>
             </div>
         </div>

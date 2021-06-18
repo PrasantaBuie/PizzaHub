@@ -6,9 +6,9 @@ const orderSchema=mongoose.Schema({
     orderItems:[],
     shippingAddress:{type:Object},
     orderAmount:{type:Number,require},
-    isDelivered:{type:Boolean,require},
+    isDelivered:{type:Boolean,require ,default:false},
     transactionId:{type:String,require}
 },{
     timestamps:true,
 })
-module.exports=mongoose.model('orderss',orderSchema) //collection name,schema
+module.exports=mongoose.model('orders',orderSchema) //collection name,schema

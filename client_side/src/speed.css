@@ -39,7 +39,7 @@ svg{
 }
 #s_tree ,#b_tree{
     animation: shake 2s linear;
-    animation-iteration-count: infinite;
+    animation-iteration-count:infinite;
   }
   
   @keyframes shake {
