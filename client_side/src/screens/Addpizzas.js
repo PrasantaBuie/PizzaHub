@@ -32,8 +32,8 @@ export default function Addpizzas() {
         dispatch(addPizza(pizza))
     }
     return(
-        <div className='text-left'>
-            <h2>Addpizzas</h2>
+        <div className='text-left shadow-lg p-3 mb-5 bg-white rounded'>
+            
             {loading && (<Loading/>)}
             {error && (<Error error='Something went wrong'/>)}
             {success && (<Success success='Pizza Added successfully'/>)}

@@ -17,7 +17,7 @@ export default function Pizzaslist() {
     return(
         <div>  {loading && <Loading/>}
         {error && <Error error='Something went wrong'/>}
-            <table className='table table-bordered'>
+            <table className='table table-bordered table-responsive-sm'>
             
                 <thead className='thead-dark'>
                     <tr>

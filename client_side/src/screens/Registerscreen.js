@@ -4,7 +4,8 @@ import { registerUser } from '../actions/userActions'
 import Loading from '../components/Loading'
 import Success from '../components/Success'
 import Error from '../components/Error'
-
+import Footer from '../components/Footer'
+import { NavLink } from 'react-router-dom'
 
 export default function Registerscreen() {
     const dispatch=useDispatch()
@@ -17,9 +18,17 @@ export default function Registerscreen() {
     const registerstate = useSelector((state) => state.registerUserReducer);
   const { error, loading, success } = registerstate;
     function register(){
-        if(password!=cpassword){
-            alert('Password not matching')
+        if(name==''){
+            alert('Name must be filled out')
+           
         }
+        
+        else if(password.length<4){
+            alert('Password length must be 4 or more')
+        }
+        else if(password!=cpassword){
+            alert('Password not matching')
+       }
         else{
             //user data saved
             const user={
@@ -31,9 +40,11 @@ export default function Registerscreen() {
             dispatch(registerUser(user))
         }
     }
+    
     return (
-        <div>
-            <div className='row justify-content-center '>
+        <>
+        <div className='p-3'>
+            <div className='row justify-content-center p-3 '>
                 <div className='col-md-5 mt-4 text-start shadow-lg p-3 mb-5 bg-white rounded'>
                 
                     <h2 className='text-center'>Register</h2>
@@ -41,18 +52,23 @@ export default function Registerscreen() {
                 {success && (<Success success='User Registerted Successfully'/>)}
                 {error  && (<Error error='something went wrong'/>)}
                     <div>
-                        <input type='text' required placeholder='enter name' className='form-control' value={name} onChange={(e)=>{setname(e.target.value)}}/>
-                        <input type='text' required placeholder='email' className='form-control' value={email} onChange={(e)=>{setmail(e.target.value)}} />
-                        <input type='text' required placeholder='password' className='form-control' value={password} onChange={(e)=>{setpassword(e.target.value)}}/>
-                        <input type='text' required placeholder='confirm-password' className='form-control' value={cpassword} onChange={(e)=>{setcpassword(e.target.value)}}/>
+                        <input type='text' required placeholder='enter name' className='form-control' value={name} onChange={(e)=>{setname(e.target.value)}} />
+                        <input type='email' required placeholder='email' className='form-control' value={email} onChange={(e)=>{setmail(e.target.value)}} />
+                        <input type='password' required placeholder='password' className='form-control' value={password} onChange={(e)=>{setpassword(e.target.value)}}/>
+                        <input type='password' required placeholder='confirm-password' className='form-control' value={cpassword} onChange={(e)=>{setcpassword(e.target.value)}}/>
                         <button className='btn mt-3 mb-3' onClick={register}>Register</button>
                         <br/>
-                        <a style={{color:'black'}} href='/login'>Click here to login</a>
+                        <p>Have an account?<NavLink to='/login'>Login</NavLink></p>
                     </div>
                 </div>
 
             </div>
+            
         </div>
+        <Footer/>
+        </>
+        
+       
     )
 
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { logoutUser } from '../actions/userActions'
+import { NavLink } from 'react-router-dom'
 
 export default function Navbar() {
     const dispatch=useDispatch()
@@ -9,10 +10,10 @@ export default function Navbar() {
     const { currentUser } = userstate
     return (
         <div>
-            <nav className="navbar navbar-expand-lg shadow-lg p-3  mb-5 bg-white rounded">
-                <a className="navbar-brand" href="/">PizzaHub</a>
+            <nav className="navbar navbar-expand-lg shadow-lg p-2 mb-4 bg-white rounded">
+                <a className="navbar-brand" href="/"><img src='https://www.freeiconspng.com/uploads/pizza-icon-26.jpg' className='navicon img-fluid'/>PizzaHub</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
+                    <span className="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ms-auto">
@@ -26,11 +27,11 @@ export default function Navbar() {
                                 <li><a className="dropdown-item" href="#" onClick={()=>{dispatch(logoutUser())}}>Logout</a></li>
                             </ul>
                         </div>) : (<li className="nav-item">
-                            <a className="nav-link" href="/login">Login </a>
+                            <a className="nav-link" href="/login"><i class="fas fa-user"></i> Login </a>
                         </li>)}
 
                         <li className="nav-item">
-                            <a className="nav-link" href="/cart">Cart {cartState.cartItems.length}</a>
+                            <a className="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i> Cart {cartState.cartItems.length}</a>
                         </li>
 
                     </ul>

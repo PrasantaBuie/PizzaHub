@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import {Modal} from'react-bootstrap'
 import { useSelector,useDispatch } from 'react-redux'
 import { addToCart } from '../actions/cartAction'
-
-
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+ 
+AOS.init({duration:1500})
 export default function Pizza({ pizza }) {
     const [quantity, setquantity] = useState(1)
     const [varient, setvarient] = useState('small')
@@ -17,7 +19,7 @@ export default function Pizza({ pizza }) {
       dispatch(addToCart(pizza,quantity,varient))
   }
     return (
-        <div style={{ margin: '70px' }} className='shadow-lg p-3 mb-5 bg-white rounded' id='card'>
+        <div data-aos='zoom-in' style={{ margin: '70px' }} className='shadow-lg p-3 mb-5 bg-white rounded' id='card'>
             <div onClick={handleShow}>
             <h1>{pizza.name}</h1>
             <img src={pizza.image} style={{ height: "200px", width: '200px' }} />

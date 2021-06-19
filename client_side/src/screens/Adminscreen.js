@@ -13,15 +13,19 @@ export default function Adminscreen() {
     const userstate = useSelector(state => state.loginUserReducer)
     const { currentUser } = userstate
     useEffect(() => {
+        if(currentUser==null)
+        {
+            window.location.href = '/login'
+        }
         if (!currentUser.isAdmin) {
             window.location.href = '/'
         }
     }, [])
     return (
         <div className='text-center'>
-            <div className='row justify-content-center'>
+            <div className='row justify-content-center p-3'>
                 <div className='col-md-10 '>
-                    <h>Admin Panel</h>
+                    <h2>Admin Panel</h2>
                     <ul className='adminfunction'>
                         <li><NavLink activeClassName='manu_active' to="/admin/userslist">Users List</NavLink></li>
                         <li><NavLink activeClassName='manu_active' to="/admin/pizzaslist">Pizzas List</NavLink></li>

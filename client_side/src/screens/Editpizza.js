@@ -67,7 +67,7 @@ export default function Editpizza({ match }) {
         
     }, [pizza,dispatch])
     return (
-        <div className='text-center'>
+        <div className='text-center shadow-lg p-3 mb-5 bg-white rounded table-responsive-sm'>
             <h1>Edit pizza</h1>
             
             {loading && (<Loading />)}

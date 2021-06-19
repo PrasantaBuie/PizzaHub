@@ -29,6 +29,7 @@ export const loginUserReducer=(state={},action)=>{
         }
         case 'USER_LOGIN_FAILED':return{
             loading:false,
+            
             error:action.payload
         }
         default:return state

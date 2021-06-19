@@ -13,10 +13,10 @@ export default function Userslist() {
     },[])
     return(
         <div>
-            <h2>Userslist</h2>
+        
             {loading && <Loading/>}
         {error && <Error error='Something went wrong'/>}
-        <table className='table table-stripped table-bordered'>
+        <table className='table table-stripped table-bordered table-responsive-sm'>
         <thead className='thead-dark'>
             <tr>
                 <th>User Id</th>

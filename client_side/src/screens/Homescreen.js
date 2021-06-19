@@ -5,6 +5,7 @@ import Loading from '../components/Loading'
 import Error from '../components/Error'
 import Pizza from '../components/Pizza'
 import Filter from '../components/Filter'
+import Footer from '../components/Footer'
 
 export default function Homescreen() {
     const pizzastate = useSelector(state => state.getAllPizzasReducer) //get the state 
@@ -30,6 +31,7 @@ export default function Homescreen() {
 
 
             </div>
+            <Footer/>
         </div>
     )
 }

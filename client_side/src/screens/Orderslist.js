@@ -16,7 +16,7 @@ export default function Orderslist() {
         <div>
             {loading && <Loading/>}
         {error && <Error error='Something went wrong'/>}
-        <table className='table table-stripped table-bordered'>
+        <table className='table table-stripped table-bordered table-responsive-sm'>
             <thead className='thead-dark'>
                 <tr>
                     <th>Order Id</th>

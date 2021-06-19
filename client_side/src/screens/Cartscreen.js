@@ -4,6 +4,12 @@ import { useSelector, useDispatch } from 'react-redux'
 import Checkout from '../components/Checkout'
 import { getUserOrders } from '../actions/orderActions'
 import { useEffect } from 'react'
+import Empty from '../components/Empty'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import Footer from '../components/Footer'
+ 
+AOS.init()
 export default function Cartscreen() {
     const dispatch=useDispatch()
    
@@ -15,8 +21,10 @@ export default function Cartscreen() {
     const cartItems = cartstate.cartItems
     const subtotal=cartItems.reduce((x,item)=>x+item.price,0)
     return (
+        
         <div>
-            <div className='row justify-content-center'>
+            {subtotal ? (
+            <div className='row justify-content-center p-2' data-aos='fade-down'>
                 <div className='col-md-6'>
                     <h2 style={{ fontSize: '40px' }}>My Cart</h2>
                     {cartItems.map(item => {
@@ -51,7 +59,8 @@ export default function Cartscreen() {
                     <Checkout subtotal={subtotal}/>
                     
                 </div>
-            </div>
+            </div>):(<Empty/>)}
+            <Footer/>
         </div>
     )
 }

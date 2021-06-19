@@ -24,6 +24,14 @@ code {
 }
 .navbar-brand{
   color: black !important;
+  font-size: 35px !important;
+  font-family: monospace;
+  font-weight: bold !important;
+  transition:  2s;
+}
+.navbar-brand:hover{
+  transform: rotate(360deg);
+  color: red !important;
 }
 h1{
   font-size: 15px !important;
@@ -35,6 +43,8 @@ h1{
 .btn{
   background-color: red !important;
   color: white !important;
+  transition: 0.5s !important;
+  font-size: 0.8rem !important;
 }
 select{
   box-shadow: none !important;
@@ -51,7 +61,7 @@ select{
   }
   
   .modal_img{
-    height: 20rem;
+    height: 20rem !important;
   }
 }
 .fa-plus{
@@ -94,9 +104,31 @@ td, th, tr{
   font-size: 0.8rem;
 }
 .manu_active{
-  font-weight: bold;
-  border-bottom: 3px solid #0ecc37;
+ color: yellow !important;
 
  
 }
+.btn:hover{
+  border-radius: 20px;
+  
+}
+footer{
+  width: 100%;
+ background-color: black;
+  margin-top: auto;
+  bottom: 0;
+ position: fixed;
+ 
 
+}
+footer p{
+  margin: 0;
+  text-align: center;
+  color: white;
+  font-size: 0.9rem;
+  line-height: 2.5rem;
+}
+.navicon{
+  width: 2rem;
+  height: 2rem;
+}
